@@ -10,17 +10,12 @@ public class HelloServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private String message;
 
-    public void init() {
-        message = "Hello World!";
-    }
-
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        init();
         response.setContentType("text/plain");
         PrintWriter out = response.getWriter();
-    //    out.println("<html><body>");
-        out.println("<h1>" + message + "</h1>");
-   //     out.println("</body></html>");
+        out.write(request.getParameter("component"));
+    }
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     }
 
     public void destroy() {

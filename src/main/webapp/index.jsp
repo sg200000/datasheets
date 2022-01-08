@@ -29,16 +29,13 @@
     <div class="row no-padding">
         <div class="col-sm-4"></div>
         <div>
-            <form method="get" action="">
-                <label>Component:
-                    <input type="text" name="component" id="component" onchange="loadAjax()" /></label>
-                <button>Search</button>
-            </form>
+            <label>Component:<input type="text" name="component" id="component" oninput="loadAjax()"/></label>
+            <button >Search</button>
         </div>
     </div>
 </div>
 
-<sql:setDataSource var="snapshot"
+<sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
                    url="jdbc:mysql://localhost:3306/alldatasheets"
                    user="root"  password="said2000"/>
 
@@ -68,6 +65,6 @@
         </tr>
     </c:forEach>
 </table>
-<p id="print"></p>
+<p id="print">hello world!</p>
 </body>
 </html>
