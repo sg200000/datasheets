@@ -68,8 +68,6 @@
         </tr>
     </c:forEach>
     </tbody>
-
 </table>
-<p id="print">hello world!</p>
 </body>
 </html>
