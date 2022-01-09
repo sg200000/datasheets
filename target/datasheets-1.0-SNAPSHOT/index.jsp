@@ -29,24 +29,22 @@
     <div class="row no-padding">
         <div class="col-sm-4"></div>
         <div>
-            <form method="get" action="">
-                <label>Component:
-                    <input type="text" name="component" id="component" onchange="loadAjax()" /></label>
-                <button>Search</button>
-            </form>
+            <label>Component:<input type="text" name="component" id="component" oninput="loadAjax()"/></label>
+            <button >Search</button>
         </div>
     </div>
 </div>
 
-<sql:setDataSource var="snapshot"
+<sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
                    url="jdbc:mysql://localhost:3306/alldatasheets"
-                   user="root"  password="said2000"/>
+                   user="root"  password="saidfadelreda"/>
 
 <sql:query dataSource="${snapshot}" var="result">
     SELECT * FROM components;
 </sql:query>
 
 <table class="table table-hover table-inverse table-striped">
+    <thead>
     <tr class="thead-dark">
         <th>Component id</th>
         <th>Reference</th>
@@ -56,6 +54,8 @@
         <th>Packaging</th>
         <th>Datasheet</th>
     </tr>
+    </thead>
+    <tbody id="data">
     <c:forEach var="row" items="${result.rows}">
         <tr>
             <td><c:out value="${row.id}"/></td>
@@ -67,7 +67,9 @@
             <td><a href="${row.datasheet}" >Dowload</a></td>
         </tr>
     </c:forEach>
+    </tbody>
+
 </table>
-<p id="print"></p>
+<p id="print">hello world!</p>
 </body>
 </html>
