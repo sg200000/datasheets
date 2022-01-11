@@ -16,8 +16,11 @@ function loadAjax(){
     try{
       //  request = new XMLHttpRequest()
         request.onreadystatechange = function (){
+            console.log("hi");
             const dataDisplay = document.getElementById("data");
             if(request.readyState === 4 && request.status === 200){
+                console.log("4");
+              //  console.log(request.responseText);
                 const result = request.response;
                 dataDisplay.innerHTML = "";
                 for (let record in result){
