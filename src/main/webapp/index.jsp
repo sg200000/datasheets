@@ -20,7 +20,7 @@
 <body>
 <sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"
                    url="jdbc:mysql://localhost:3306/alldatasheets"
-                   user="root"  password="saidfadelreda"/>
+                   user="said"  password="saidfadelreda"/>
 
 <sql:query dataSource="${snapshot}" var="result">
     SELECT * FROM components;
