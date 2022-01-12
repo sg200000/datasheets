@@ -7,12 +7,8 @@ import javax.servlet.annotation.*;
 import java.sql.*;
 import java.util.Properties;
 
-import com.example.datasheets.component.Component;
-import com.example.datasheets.component.FullReference;
-import com.example.datasheets.search.ComponentSearch;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.ParseException;
 
 @WebServlet(name = "helloServlet", value = "/hello-servlet")
 public class HelloServlet extends HttpServlet {
@@ -37,26 +33,12 @@ public class HelloServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
-
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        FullReference fullReference = new FullReference(request.getParameter("component"));
-
-        String query = "SELECT * FROM components WHERE reference LIKE '%"+fullReference.getReference()+"%'";
+        String query = "SELECT * FROM components WHERE reference LIKE '%"+request.getParameter("component")+"%'";
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
-     /*   try {
-            ComponentSearch search = new ComponentSearch(conn,fullReference.getReference());
-            //out.print(search);
-            out.write(search.toJSON());
-        } catch (SQLException | ParseException e) {
-           // e.printStackTrace();
-            System.out.println(e);
-        }*/
-
-
         JSONArray obj = new JSONArray();
         try (Statement stmt = conn.createStatement()) {
             ResultSet rs = stmt.executeQuery(query);

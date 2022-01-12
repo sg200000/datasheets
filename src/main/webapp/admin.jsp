@@ -1,48 +1,52 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Administration interface</title>
     <link href="admin/css/admin.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="admin/js/ajaxAdmin.js"></script>
     <style>
-        body {
-            background-color: aqua;
-        }
     </style>
 </head>
-<body >
-<div class="global container-fluid-sm p-3 my-3 bg-aqua text-black">
-    <div class="row">
+<body style="background-color: aquamarine">
+<div class="container-fluid-sm" style="background-color: aquamarine">
+    <div class="Row mb-0 mt-0 pt-5 pb-5" style="background-color: #66daba">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 text-center">
+            <h1 class="display-2">Administration Interface</h1>
+        </div>
+    </div>
+    <div class="row pt-5 pb-5">
+        <div class="col-md-2"></div>
         <div class="col-md-4">
-            <h1 class="titles">Add new Component</h1>
+            <h1>Add new Component</h1>
             <table>
-                <tr>
-                    <td>Reference:</td>
-                    <td><input type="text" name="reference" id="reference"/></td>
+                <tr class="form-group">
+                    <td class="font-weight-bold">Reference</td>
+                    <td><input type="text" name="reference" id="reference" class="form-control"/></td>
                 </tr>
-                <tr>
-                    <td>Category:</td>
-                    <td><input type="text" name="category" id="category"/></td>
+                <tr class="form-group">
+                    <td class="font-weight-bold">Category:</td>
+                    <td><input type="text" name="category" id="category" class="form-control"/></td>
                 </tr>
-                <tr>
-                    <td>Voltage:</td>
-                    <td><input type="text" name="voltage" id="voltage"/></td>
+                <tr class="form-group">
+                    <td class="font-weight-bold">Voltage:</td>
+                    <td><input type="text" name="voltage" id="voltage" class="form-control"/></td>
                 </tr>
-                <tr>
-                    <td>Voltage unit:</td>
+                <tr class="form-group">
+                    <td class="font-weight-bold">Voltage unit:</td>
                     <td>
-                        <select name="voltage_unit" id="voltage_unit">
+                        <select name="voltage_unit" id="voltage_unit" class="custom-select mr-sm-2">
                         <option value="V">V</option>
                         <option value="mV">mV</option>
                         <option value="uV">µV</option>
                         </select>
                     </td>
                 </tr>
-                <tr>
-                    <td>Packaging:</td>
+                <tr class="form-group">
+                    <td class="font-weight-bold">Packaging:</td>
                     <td>
-                        <select name="packaging" id="packaging">
+                        <select name="packaging" id="packaging" class="custom-select mr-sm-2">
                             <option value="8-DIP">8-DIP</option>
                             <option value="32-DIP">32-DIP</option>
                             <option value="8-MSOP">8-MSOP</option>
@@ -66,9 +70,9 @@
                         </select>
                     </td>
                 </tr>
-                <tr>
-                    <td>Datasheet:</td>
-                    <td><input type="text" name="datasheet" id="datasheet"/></td>
+                <tr class="form-group mb-2">
+                    <td class="font-weight-bold">Datasheet:</td>
+                    <td><input type="text" name="datasheet" id="datasheet" class="form-control"/></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -76,12 +80,12 @@
                 </tr>
             </table>
         </div>
-        <div class="col-md-4 titles">
-            <h1 class="titles">Delete a component</h1>
+        <div class="col-md-4">
+            <h1>Delete a component</h1>
             <table>
-                <tr>
-                    <td>id</td>
-                    <td><input type="text" name="id" id="idRm"/></td>
+                <tr class="form-group">
+                    <td class="font-weight-bold">id: </td>
+                    <td><input type="text" name="id" id="idRm" class="form-control"/></td>
                 </tr>
                 <tr>
                     <td></td>
