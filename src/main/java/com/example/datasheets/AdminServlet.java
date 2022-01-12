@@ -28,7 +28,7 @@ public class AdminServlet extends HttpServlet {
         this.serverName = "localhost";
         this.portNumber = 3306;
         this.dbName = "alldatasheets";
-        this.userName = "root";
+        this.userName = "said";
         this.password = "saidfadelreda";
         try {
             conn = this.getConnection();
